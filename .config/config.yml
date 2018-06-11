@@ -1,0 +1,15 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: paperist/alpine-texlive-ja
+        steps:
+            - checkout
+            - run:
+                name: Generating current version
+                command: |
+                    latexmk cv.tex;
+                    mkdir /tmp/artifacts;
+                    cp cv.pdf /tmp/artifacts/
+            - store_artifacts:
+                path: /tmp/artifacts
