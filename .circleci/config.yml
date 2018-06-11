@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: paperist/alpine-texlive-ja
+            - image: sumdoc/texlive-2017
         steps:
             - checkout
             - run:
