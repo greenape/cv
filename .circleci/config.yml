@@ -8,7 +8,7 @@ jobs:
             - run:
                 name: Generating current version
                 command: |
-                    latexmk cv.tex;
+                    latexmk -xelatex cv.tex;
                     mkdir /tmp/artifacts;
                     cp cv.pdf /tmp/artifacts/
             - store_artifacts:
